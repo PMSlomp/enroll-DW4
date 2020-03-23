@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/include")
-public class IncludeStudentServlet extends HttpServlet {
+@WebServlet("/enroll")
+public class ServletEnrollStudent extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("cadastrando aluno");
@@ -23,9 +23,11 @@ public class IncludeStudentServlet extends HttpServlet {
         DataBase db = new DataBase();
         db.add(student);
 
-        RequestDispatcher rd =  request.getRequestDispatcher("/confirm.jsp");
-        request.setAttribute("student", student.getName());
-        rd.forward(request, response);
+        response.sendRedirect("enrollList");
+
+//        RequestDispatcher rd =  request.getRequestDispatcher("/confirm.jsp");
+//        request.setAttribute("student", student.getName());
+//        rd.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

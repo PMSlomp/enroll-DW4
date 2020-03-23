@@ -10,20 +10,20 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/call-listS")
-public class CallListServlet extends HttpServlet {
+@WebServlet("/enrollList")
+public class ServletEnrollList extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         DataBase db = new DataBase();
         List<Student> studentList = db.getStudentsList();
 
         request.setAttribute("students", studentList);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/call-list.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/enroll-list.jsp");
         rd.forward(request, response);
 
     }
