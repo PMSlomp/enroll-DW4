@@ -1,4 +1,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema">
-  <display-name>Archetype Created Web Application</display-name>
-
+  <display-name>College</display-name>
+  <welcome-file0list>
+    <welcome-file>include-student.jsp</welcome-file>
+  </welcome-file0list>
 </web-app>
