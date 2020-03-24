@@ -30,10 +30,11 @@
 - [ ] forEach
 - [ ] if
 - [ ] Template com cabeçalho e rodapé
+
 ~~**JavaScript**~~
-~~-[ ] Requisição AJAX~~
-~~-[ ]Armazenamento no LocalStorage~~
-~~-[ ] Uso de plugin JQuery~~
+~~ - [ ] Requisição AJAX~~
+~~ - [ ]Armazenamento no LocalStorage~~
+~~ - [ ] Uso de plugin JQuery~~
 
 **JPA**
 - [ ] No mínimo 4 entidades, contabilizando as entidades User e Role, se houverem.
