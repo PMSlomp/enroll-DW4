@@ -1,17 +1,17 @@
-package br.edu.utfpr;
+package br.edu.utfpr.action;
 
+import br.edu.utfpr.model.DataBase;
+import br.edu.utfpr.model.Student;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/editing")
-public class ServletEditing extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class EditStudent {
 
-        System.out.println("editando aluno");
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String studentName = request.getParameter("name");
         Integer id = Integer.parseInt(request.getParameter("id"));
@@ -22,7 +22,5 @@ public class ServletEditing extends HttpServlet {
         student.setNome(studentName);
 
         response.sendRedirect("enrollList");
-
     }
-
 }

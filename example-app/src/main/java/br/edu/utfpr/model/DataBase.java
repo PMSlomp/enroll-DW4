@@ -1,4 +1,4 @@
-package br.edu.utfpr;
+package br.edu.utfpr.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,11 +1,10 @@
 <%@ page import="java.util.List" %>
-<%@ page import="br.edu.utfpr.Student" %>
-<%@ page import="java.util.List, br.edu.utfpr.Student" %>
+<%@ page import="br.edu.utfpr.model.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:url value="/delete?id=" var="delete"/>
-<c:url value="/edit?id=" var="edit"/>
+<c:url value="/list?way=delete&id=" var="delete"/>
+<c:url value="/list?way=edit&id=" var="edit"/>
 
 <html>
 <head>
@@ -13,21 +12,27 @@
 </head>
 <body>
 
-    <c:if test="${not empty student}">
-        Estudante ${student} cadastrado com sucesso!
+<%--    <c:if test="${not empty student}">--%>
+<%--        Estudante ${student} cadastrado com sucesso!--%>
+<%--    </c:if>--%>
+
+    <c:if test="${empty students}">
+        Nenhum estudante matriculado
     </c:if>
 
-    <ul>
+    <c:if test="${not empty students}">
+        <ul>
 
-        <c:forEach items="${students}" var="student">
-            <li>
-                ${student.name}
-                <a href="${delete}${student.id}">deletar</a>
-                <a href="${edit}${student.id}">editar</a>
-            </li>
-        </c:forEach>
+            <c:forEach items="${students}" var="student">
+                <li>
+                    ${student.name}
+                    <a href="${delete}${student.id}">deletar</a>
+                    <a href="${edit}${student.id}">editar</a>
+                </li>
+            </c:forEach>
 
-    </ul>
+        </ul>
+    </c:if>
 
 </body>
 </html>
