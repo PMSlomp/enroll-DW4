@@ -14,11 +14,10 @@ import java.util.List;
 
 @WebServlet("/enrollList")
 public class ServletEnrollList extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        System.out.println("matriculado");
 
         DataBase db = new DataBase();
         List<Student> studentList = db.getStudentsList();
