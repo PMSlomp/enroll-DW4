@@ -8,13 +8,14 @@ import java.io.IOException;
 
 public class DeleteStudent {
 
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         Integer id = Integer.parseInt(request.getParameter("id"));
 
         DataBase db = new DataBase();
         db.deleteStudent(id);
 
-        response.sendRedirect("enrollList");
+//        response.sendRedirect("enrollList");
+        return"redirect:enrollList";
     }
 }

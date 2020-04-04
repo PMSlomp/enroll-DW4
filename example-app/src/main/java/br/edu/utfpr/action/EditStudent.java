@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class EditStudent {
 
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String studentName = request.getParameter("name");
         Integer id = Integer.parseInt(request.getParameter("id"));
@@ -21,6 +21,7 @@ public class EditStudent {
         Student student = db.findStudent(id);
         student.setNome(studentName);
 
-        response.sendRedirect("enrollList");
+//        response.sendRedirect("enrollList");
+        return"redirect:enrollList";
     }
 }

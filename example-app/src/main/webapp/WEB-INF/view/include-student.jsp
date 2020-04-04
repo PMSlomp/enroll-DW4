@@ -11,6 +11,10 @@
 </head>
 <body>
 
+    Usuário: ${user.login}
+    <br>
+    <br>
+
     <form action="${enroll}" method="post">
 
         Nome: <input type="text" name="name">

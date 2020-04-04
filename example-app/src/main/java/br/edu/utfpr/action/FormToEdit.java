@@ -3,25 +3,25 @@ package br.edu.utfpr.action;
 import br.edu.utfpr.model.DataBase;
 import br.edu.utfpr.model.Student;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class ShowToEdit {
+public class FormToEdit {
 
-    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         Integer id = Integer.parseInt(request.getParameter("id"));
 
         DataBase db = new DataBase();
         Student student = db.findStudent(id);
 
-        System.out.println(student.getName());
+        System.out.println("Editar: " + student.getName());
 
         request.setAttribute("student", student);
-        RequestDispatcher rd = request.getRequestDispatcher("/edit-student.jsp");
-        rd.forward(request, response);
+
+        return "forward:edit-student.jsp";
     }
 }
