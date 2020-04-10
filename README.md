@@ -6,14 +6,14 @@
 - [x] Usar redirecionamento depois de requisições POST de um formulário para evitar o reenvio destes dados ao atualizar a página com F5.
 - [x] Para uma mesma rota de um Servlet, usar doGet para encaminhar a uma página e doPost para recuperar os dados da página/formulário
 
-- [ ] **Escopo de requisição, sessão e aplicação**
+- [x] **Escopo de requisição, sessão e aplicação**
 
 **Cookies**
 - [ ] Cookie que dura apenas uma sessão do navegador
 - [ ] Cookie com tempo de vida customizado além de uma sessão do navegador
 
 **Filtros**
-- [ ] Filtro normal de intercepção de requisição ou resposta
+- [x] Filtro normal de intercepção de requisição ou resposta
 - [ ] Filtro com modificação da parâmetros via Wrapper
 - [ ] Filtro para tratamento de ataques XSS
 
