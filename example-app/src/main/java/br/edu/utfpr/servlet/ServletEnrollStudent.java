@@ -17,7 +17,7 @@ public class ServletEnrollStudent extends HttpServlet {
 
         HttpSession session = request.getSession();
         if(session.getAttribute("user") == null) {
-            response.sendRedirect("redirect:list?way=FormToLogin");
+            response.sendRedirect("redirect:index?way=FormToLogin");
         }
 
         String studentName = request.getParameter("name");

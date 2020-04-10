@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/list")
+@WebServlet("/index")
 public class Servlet extends HttpServlet {
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String way = request.getParameter("way");
 
-        HttpSession session = request.getSession();
-        Boolean notLogin = (session.getAttribute("user") == null);
-        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin"));
-
-        if(notLogin && protectWay) {
-            response.sendRedirect("list?way=FormToLogin");
-            return;
-        }
-
-
+//        HttpSession session = request.getSession();
+//        Boolean notLogin = (session.getAttribute("user") == null);
+//        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin"));
+//
+//        if(notLogin && protectWay) {
+//            response.sendRedirect("index?way=FormToLogin");
+//            return;
+//        }
         String name = null;
         String[] action;
 
@@ -61,13 +59,18 @@ public class Servlet extends HttpServlet {
 
             FormToLogin toLogin = new FormToLogin();
             name = toLogin.execute(request, response);
-        }
-        else if(way.equals("Login")) {
+        } else if(way.equals("Login")) {
 
             System.out.println("login");
 
             Login login = new Login();
             name = login.execute(request, response);
+        } else if(way.equals("Logout")) {
+
+            System.out.println("saindo");
+
+            Logout logout = new Logout();
+            name = logout.execute(request, response);
         }
 
 

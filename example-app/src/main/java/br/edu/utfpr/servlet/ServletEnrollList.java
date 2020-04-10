@@ -20,10 +20,9 @@ public class ServletEnrollList extends HttpServlet {
 
         HttpSession session = request.getSession();
         Boolean notLogin = (session.getAttribute("user") == null);
-//        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin"));
 
         if(notLogin) {
-            response.sendRedirect("list?way=FormToLogin");
+            response.sendRedirect("index?way=FormToLogin");
             return;
         }
 
