@@ -14,6 +14,7 @@ public class Login {
 
 
         String login = request.getParameter("login");
+        login = login.toLowerCase();
         String pass = request.getParameter("pass");
 
         DataBase db = new DataBase();
@@ -26,7 +27,8 @@ public class Login {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-            return "forward:include-student.jsp";
+//            return "forward:include-student.jsp";
+            return "redirect:index?way=IncludeStudent";
         } else {
 
             request.setAttribute("user", user.getLogin());

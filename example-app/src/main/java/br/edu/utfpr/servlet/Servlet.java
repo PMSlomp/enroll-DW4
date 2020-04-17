@@ -18,14 +18,6 @@ public class Servlet extends HttpServlet {
 
         String way = request.getParameter("way");
 
-//        HttpSession session = request.getSession();
-//        Boolean notLogin = (session.getAttribute("user") == null);
-//        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin"));
-//
-//        if(notLogin && protectWay) {
-//            response.sendRedirect("index?way=FormToLogin");
-//            return;
-//        }
         String name = null;
         String[] action;
 
@@ -71,6 +63,18 @@ public class Servlet extends HttpServlet {
 
             Logout logout = new Logout();
             name = logout.execute(request, response);
+        } else if(way.equals("FormToRegister")) {
+
+            System.out.println("registrando");
+
+            FormToRegister toRegister = new FormToRegister();
+            name = toRegister.execute(request, response);
+        } else if(way.equals("Register")) {
+
+            System.out.println("saindo");
+
+            Register register = new Register();
+            name = register.execute(request, response);
         }
 
 

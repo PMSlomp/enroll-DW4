@@ -4,6 +4,8 @@ public class Student {
 
     private Integer id;
     private String name;
+    private String curse;
+    private String year;
 
     public Integer getId() {
         return id;
@@ -19,5 +21,17 @@ public class Student {
         this.name = name;
     }
 
+    public String getCurse() {
+        return curse;
+    }
+    public void setCurse(String curse) {
+        this.curse = curse;
+    }
 
+    public String getYear() {
+        return year;
+    }
+    public void setYear(String year) {
+        this.year = year;
+    }
 }

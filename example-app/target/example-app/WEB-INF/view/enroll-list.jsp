@@ -5,34 +5,67 @@
 
 <c:url value="/index?way=DeleteStudent&id=" var="delete"/>
 <c:url value="/index?way=FormToEdit&id=" var="edit"/>
+<c:url value="/index?way=IncludeStudent" var="include"/>
+<c:set value="0" var="aux"/>
 
-<html>
-<head>
-    <title>Title</title>
-</head>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<c:import url="../model/head.jsp"/>
+
+<c:import url="../model/header.jsp"/>
+
 <body>
+    <div class="container" style="margin-top: 20px">
+        <div class="row justify-content-center">
+            <div class="card col" style="max-width: 768px;">
+                <div class="card-body">
+                    <h3 class="text-center" style="margin-bottom: 30px">Inscrever</h3>
+                    <div class="row">
 
-<%--    <c:if test="${not empty student}">--%>
-<%--        Estudante ${student} cadastrado com sucesso!--%>
-<%--    </c:if>--%>
+                        <c:if test="${empty students}">
+                            Nenhum estudante matriculado
+                        </c:if>
 
-    <c:if test="${empty students}">
-        Nenhum estudante matriculado
-    </c:if>
+                        <c:if test="${not empty students}">
 
-    <c:if test="${not empty students}">
-        <ul>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Curso</th>
+                                        <th scope="col">Ano</th>
+                                        <th scope="col">Opções</th>
+                                    </tr>
+                                </thead>
 
-            <c:forEach items="${students}" var="student">
-                <li>
-                    ${student.name}
-                    <a href="${delete}${student.id}">deletar</a>
-                    <a href="${edit}${student.id}">editar</a>
-                </li>
-            </c:forEach>
+                                <tbody>
+                                <c:forEach items="${students}" var="student">
+                                    <tr>
+                                        <th scope="row">${aux = aux + 1}</th>
+                                        <td>${student.name}</td>
+                                        <td>${student.curse}</td>
+                                        <td>${student.year}</td>
+                                        <td>
+                                            <a href="${delete}${student.id}">deletar</a> |
+                                            <a href="${edit}${student.id}">editar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:if>
 
-        </ul>
-    </c:if>
-
+                        <a href="${include}"><button class="btn btn-sm btn-outline-secondary" type="button" style="margin-top: 10px">
+                            Voltar para inscrição</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
+<c:import url="../model/footer.jsp"/>
+
 </html>

@@ -19,7 +19,7 @@ public class FilterLogin implements Filter {
 
         HttpSession session = request.getSession();
         Boolean notLogin = (session.getAttribute("user") == null);
-        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin"));
+        Boolean protectWay = !(way.equals("Login") || way.equals("FormToLogin") || way.equals("FormToRegister") || way.equals("Register"));
 
         if(notLogin && protectWay) {
             response.sendRedirect("index?way=FormToLogin");

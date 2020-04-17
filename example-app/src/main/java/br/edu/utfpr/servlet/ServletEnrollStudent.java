@@ -21,9 +21,13 @@ public class ServletEnrollStudent extends HttpServlet {
         }
 
         String studentName = request.getParameter("name");
+        String studentCurse = request.getParameter("curse");
+        String studentYear = request.getParameter("year");
 
         Student student = new Student();
         student.setNome(studentName);
+        student.setCurse(studentCurse);
+        student.setYear(studentYear);
 
         DataBase db = new DataBase();
         db.addStudent(student);

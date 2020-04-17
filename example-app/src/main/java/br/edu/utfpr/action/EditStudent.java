@@ -14,12 +14,16 @@ public class EditStudent {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         String studentName = request.getParameter("name");
+        String studentCurse = request.getParameter("curse");
+        String studentYear = request.getParameter("year");
         Integer id = Integer.parseInt(request.getParameter("id"));
 
         DataBase db = new DataBase();
 
         Student student = db.findStudent(id);
         student.setNome(studentName);
+        student.setCurse(studentCurse);
+        student.setYear(studentYear);
 
 //        response.sendRedirect("enrollList");
         return"redirect:enrollList";
