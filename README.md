@@ -29,7 +29,7 @@
 **JSTL e TagLib**
 - [x] forEach
 - [x] if
-- [ ] Template com cabeçalho e rodapé
+- [x] Template com cabeçalho e rodapé
 
 ~~**JavaScript**~~
 - [ ] ~~Requisição AJAX~~
