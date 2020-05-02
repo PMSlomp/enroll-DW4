@@ -12,7 +12,7 @@
 
     <form action="${login}" method="post" class="form-signin">
 
-        <img class="mb-4" src="img/logo.png" alt width="200">
+        <img class="mb-4" src="/WEB-INF/view/college.png"/>
 
         <h1 class="h3 mb-3 font-weight-normal">COLLEGE</h1>
 

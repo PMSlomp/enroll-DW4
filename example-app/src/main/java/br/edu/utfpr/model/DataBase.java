@@ -17,13 +17,9 @@ public class DataBase {
        usersList.add(notFound);
 
        User u1 = new User();
-       u1.setLogin("Pablo");
+       u1.setLogin("PABLO");
        u1.setPass("123");
-       User u2 = new User();
-       u2.setLogin("Amanda");
-       u2.setPass("345");
        usersList.add(u1);
-       usersList.add(u2);
    }
 
     //STUDENT

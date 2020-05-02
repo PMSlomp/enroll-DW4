@@ -3,6 +3,7 @@ package br.edu.utfpr.action;
 import br.edu.utfpr.model.DataBase;
 import br.edu.utfpr.model.User;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,7 +15,8 @@ public class Login {
 
 
         String login = request.getParameter("login");
-        login = login.toLowerCase();
+        login = login.toUpperCase();
+        Cookie ck = new Cookie("login", login + "CK");
         String pass = request.getParameter("pass");
 
         DataBase db = new DataBase();
@@ -27,7 +29,10 @@ public class Login {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-//            return "forward:include-student.jsp";
+            ck.setMaxAge(-1);
+            System.out.println("tempo do cookie: " + ck.getMaxAge());
+            response.addCookie(ck);
+
             return "redirect:index?way=IncludeStudent";
         } else {
 

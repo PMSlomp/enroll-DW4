@@ -4,6 +4,33 @@
     <welcome-file>/index?way=FormToLogin</welcome-file>
   </welcome-file-list>
 
+<!--  <servlet>-->
+<!--    <servlet-name>Servlet</servlet-name>-->
+<!--    <servlet-class>br.edu.utfpr.servlet.Servlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>Servlet</servlet-name>-->
+<!--    <url-pattern>/index?way=FormToLogin</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>br.edu.utfpr.servlet.FilterLogin</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/index</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>ControllerFilter</filter-name>
+    <filter-class>br.edu.utfpr.servlet.FilterController</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ControllerFilter</filter-name>
+    <url-pattern>/index</url-pattern>
+  </filter-mapping>
+
 <!--  <error-page>-->
 <!--    <error-code>404</error-code>-->
 <!--    <location>/not-found.html</location>-->

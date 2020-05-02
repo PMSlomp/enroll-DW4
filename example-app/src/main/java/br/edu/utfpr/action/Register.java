@@ -1,7 +1,6 @@
 package br.edu.utfpr.action;
 
 import br.edu.utfpr.model.DataBase;
-import br.edu.utfpr.model.Student;
 import br.edu.utfpr.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ public class Register {
         String pass = request.getParameter("pass");
 
         User user = new User();
-        user.setLogin(login.toLowerCase());
+        user.setLogin(login.toUpperCase());
         user.setPass(pass);
 
         DataBase db = new DataBase();
