@@ -23,8 +23,9 @@
 
 **Autenticação e autorização com JAAS considerando no mínimo dois papeis/roles**
 - [ ] Usar JDBC Realm com formulário e senha com hash SHA-256
+- [x] Precisa ter formulário de cadastro de usuários
 
-**Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC**
+- [x] **Expression Language (EL) para acessar os objetos de domínio (beans) da camada de modelo do MVC**
 
 **JSTL e TagLib**
 - [x] forEach
